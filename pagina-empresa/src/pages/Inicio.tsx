@@ -1,19 +1,20 @@
-import Navbar from "../components/Navbar";
+import Companies from "../components/Companies";
+import Cta from "../components/Cta";
+import Hero from "../components/Hero";
+import Metrics from "../components/Metrics";
+import Process from "../components/Process";
+import Team from "../components/Team";
 
 export default function Inicio(){
     return(
         
-    <html lang="es">
-        <head>
-          <meta charSet="UTF-8" />
-          <title>KorexalTech</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        </head>
-
-        <body className="bg-dark text-white">
-          <Navbar/>
-        </body>
-      </html>
+        <div>
+          <Hero/>
+          <Companies/>
+          <Process/>
+          <Metrics/>
+          <Team/>
+          <Cta/>
+        </div>
     );
 }
