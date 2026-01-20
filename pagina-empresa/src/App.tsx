@@ -4,21 +4,18 @@ import Inicio from "./pages/Inicio";
 import Navbar from "./components/Navbar";
 
 function App() {
-  
-
   return (
     <BrowserRouter>
-    <div>
-      <Navbar/>
-      
-      <Routes>
-        <Route path="/" element={<Inicio/>} />
-      </Routes>
-      <Footer/>
+      {/* bg-dark aplica el color #1a2533 definido en el CSS */}
+      <div className="bg-dark min-h-screen">
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Inicio/>} />
+        </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
   );
-  
 }
 
-export default App
+export default App;

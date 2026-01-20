@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@theme {
+  /* Color exacto de tu logo */
+  --color-dark: #1a2533;
+  /* Un tono ligeramente más claro para que las tarjetas resalten sobre el fondo */
+  --color-dark-card: #222e3d; 
+  --color-primary: #004bad;
+  --color-secondary: #0066ff;
+  --color-muted: #94a3b8;
+  --color-dark-border: #2e3b4d;
+
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  body {
+    background-color: #1a2533;
+    @apply text-white antialiased;
+  }
+}
