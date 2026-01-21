@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  app-frontend:
+    build: .
+    ports:
+      - "8080:80" # Mapea el puerto 80 del contenedor al 8080 de tu PC
+    container_name: mi-pagina-empresa
