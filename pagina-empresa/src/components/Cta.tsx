@@ -78,7 +78,6 @@ export default function Cta() {
               Enviar Solicitud <Send size={18} className="group-hover:translate-x-1 transition-transform"/>
             </button>
             <p className="text-xs text-muted/60 text-center mt-4">
-                * Esto es una demostración visual de la interfaz.
             </p>
           </form>
         </div>

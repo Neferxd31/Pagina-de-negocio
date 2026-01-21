@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Inicio from "./pages/Inicio";
+import TerminosServicio from "./pages/TerminosServicio";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Inicio/>} />
+          <Route path="/terminos-servicio" element={<TerminosServicio/>} />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad/>} />
         </Routes>
         <Footer/>
       </div>
