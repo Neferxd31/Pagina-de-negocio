@@ -4,8 +4,8 @@ export default function Cta() {
   return (
     <section id="contacto" className="py-28 px-6 bg-dark-lighter relative overflow-hidden border-t border-white/5">
        {/* Decoración de Fondo */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-150 h-150 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-secondary/5 blur-[100px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 relative z-10 items-center">
         <div className="animate-fade-in-up lg:pr-12">
@@ -27,15 +27,15 @@ export default function Cta() {
              <div className="flex items-center gap-5 group">
                 <div className="bg-dark-card p-4 rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors shadow-lg shadow-black/20"><Phone className="text-primary w-6 h-6"/></div>
                 <div>
-                    <p className="text-sm font-bold text-white uppercase tracking-wider mb-1">Línea Directa</p>
-                    <p className="text-lg text-muted font-medium">+57 (300) 123-4567</p>
+                    <p className="text-sm font-bold text-white uppercase tracking-wider mb-1">Números de Contacto</p>
+                    <p className="text-lg text-muted font-medium">+57 (314) 784-4269 - +57 (314) 854-8544</p>
                 </div>
             </div>
              <div className="flex items-center gap-5 group">
                 <div className="bg-dark-card p-4 rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors shadow-lg shadow-black/20"><MapPin className="text-primary w-6 h-6"/></div>
                 <div>
                     <p className="text-sm font-bold text-white uppercase tracking-wider mb-1">Oficina Principal</p>
-                    <p className="text-lg text-muted font-medium">Medellín, Colombia - Edificio Ruta N</p>
+                    <p className="text-lg text-muted font-medium">Los Patios, Colombia</p>
                 </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function Cta() {
 
             <div className="space-y-2">
               <label htmlFor="project" className="text-sm font-semibold text-muted ml-1">Tipo de Servicio</label>
-              <select id="project" className="w-full bg-dark border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all appearance-none cursor-pointer bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3E%3Cpath stroke=%27%237D90A7%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3E%3C/svg%3E')] bg-[length:1.25rem_1.25rem] bg-no-repeat bg-[right_1rem_center] pr-10">
+              <select id="project" className="w-full bg-dark border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all appearance-none cursor-pointer bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3E%3Cpath stroke=%27%237D90A7%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3E%3C/svg%3E')] bg-size[length:1.25rem_1.25rem] bg-no-repeat bg-position[right_1rem_center] pr-10">
                 <option className="bg-dark">Selecciona una opción...</option>
                 <option className="bg-dark">Sitio web</option>
                 <option className="bg-dark">App web</option>
