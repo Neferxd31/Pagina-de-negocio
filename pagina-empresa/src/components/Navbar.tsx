@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-dark/90 backdrop-blur-xl border-b border-white/5 supports-[backdrop-filter]:bg-dark/60">
+    <nav className="fixed w-full z-50 bg-dark/90 backdrop-blur-xl border-b border-white/5 supports-backdrop-filter:bg-dark/60">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
         {/* Logo */}
@@ -36,7 +36,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                className="hover:text-primary transition-colors relative after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
