@@ -1,4 +1,4 @@
-import { Linkedin, Github, Code2, Database } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 
 export default function Team() {
   return (
