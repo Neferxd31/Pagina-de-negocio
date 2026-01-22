@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WhatsApp } from "../icons/Whatsapp";
+import { WhatsAppIcon } from "../icons/WhatsappIcon";
 
 export default function Burble() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function Burble() {
           >
             <span className="text-sm font-medium">Desarrollo</span>
             <div className="bg-[#25D366] p-1 rounded-full">
-                <WhatsApp className="h-4 w-4 text-white" />
+                <WhatsAppIcon className="h-4 w-4 text-white" />
             </div>
           </a>
 
@@ -33,7 +33,7 @@ export default function Burble() {
           >
             <span className="text-sm font-medium">Soporte Técnico</span>
             <div className="bg-[#25D366] p-1 rounded-full">
-                <WhatsApp className="h-4 w-4 text-white" />
+                <WhatsAppIcon className="h-4 w-4 text-white" />
             </div>
           </a>
           
@@ -50,7 +50,7 @@ export default function Burble() {
         {isOpen ? (
           <span className="text-white text-2xl font-bold">✕</span>
         ) : (
-          <WhatsApp className="h-10 w-10 text-white fill-current" />
+          <WhatsAppIcon className="h-10 w-10 text-white fill-current" />
         )}
       </button>
     </div>

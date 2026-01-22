@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-const WhatsApp = (props: SVGProps<SVGSVGElement>) => (
+const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} fill="none" viewBox="0 0 360 362">
     <path
       fill="#FFFFFF"
@@ -11,4 +11,4 @@ const WhatsApp = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export { WhatsApp };
+export { WhatsAppIcon };
