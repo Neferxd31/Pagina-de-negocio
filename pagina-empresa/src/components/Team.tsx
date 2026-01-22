@@ -1,4 +1,4 @@
-import { Linkedin, Github, Code2, Database } from 'lucide-react';
+import { Linkedin, Github} from 'lucide-react';
 
 export default function Team() {
   return (
@@ -6,7 +6,7 @@ export default function Team() {
       <div className="max-w-4xl mx-auto text-center mb-20 animate-fade-in-up">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">El Equipo Principal</h2>
         <p className="text-muted max-w-2xl mx-auto text-lg">
-          Ingenieros apasionados por la excelencia técnica y la innovación constante.
+          Personas apasionadas por la excelencia técnica y la innovación constante.
         </p>
       </div>
 
