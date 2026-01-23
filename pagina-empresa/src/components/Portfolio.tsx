@@ -93,7 +93,7 @@ export default function Portfolio() {
                   alt={project.title}
                   className="w-full h-full object-cover  duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-dark-card/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-dark-card via-dark-card/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
                 
                 {/* Categoría Badge */}
                 <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">

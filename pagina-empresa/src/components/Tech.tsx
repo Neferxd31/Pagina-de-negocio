@@ -85,7 +85,7 @@ export default function TechCarousel() {
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
           Tecnologías que{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
             Dominamos
           </span>
         </h2>
@@ -105,7 +105,7 @@ export default function TechCarousel() {
         {duplicatedTechs.map((tech, index) => (
           <div
             key={index}
-            className="flex-shrink-0 mx-4"
+            className="shrink-0 mx-4"
             style={{ width: "180px" }}
           >
             <div className="bg-dark-card border border-white/10 rounded-2xl p-6 h-44 flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20">

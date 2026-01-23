@@ -31,7 +31,7 @@ export default function Hero() {
        {/* Ilustración Tecnológica */}
         <div className="relative lg:h-150 flex items-center justify-center animate-fade-in delay-200 group perspective-1000">
           <div className="relative z-10 bg-linear-to-br from-dark-card/80 to-dark/80 border border-white/10 rounded-4xl p-12 flex justify-center items-center shadow-2xl shadow-primary/10 backdrop-blur-sm hover:-translate-y-2 hover:rotate-y-2 transition-all duration-500">
-            <div className="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2rem]"></div>
+            <div className="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-4xl"></div>
             {/* Icono Central Animado */}
             <div className="relative animate-float">
                 <Cpu className="text-white w-48 h-48 drop-shadow-[0_0_30px_rgba(0,75,173,0.5)]" strokeWidth={1} />

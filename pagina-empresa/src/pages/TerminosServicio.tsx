@@ -5,14 +5,14 @@ export default function TerminosServicio() {
     <div className="bg-dark min-h-screen">
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6 bg-dark relative overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-[-20%] left-[-10%] w-150 h-150 bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-primary text-sm font-semibold mb-6 backdrop-blur-md">
             <FileText size={16} /> Información Legal
           </div>
           <h1 className="text-4xl lg:text-6xl font-extrabold mb-6">
-            Términos de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Servicio</span>
+            Términos de <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">Servicio</span>
           </h1>
           <p className="text-muted text-lg mb-4">
             Última actualización: Enero 2026
@@ -27,7 +27,7 @@ export default function TerminosServicio() {
           {/* Sección 1 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <Shield className="text-primary" size={24} />
               </div>
               <div>
@@ -47,7 +47,7 @@ export default function TerminosServicio() {
           {/* Sección 2 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <CheckCircle className="text-primary" size={24} />
               </div>
               <div>
@@ -84,7 +84,7 @@ export default function TerminosServicio() {
           {/* Sección 3 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <AlertCircle className="text-primary" size={24} />
               </div>
               <div>
