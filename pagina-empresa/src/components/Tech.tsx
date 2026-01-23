@@ -16,6 +16,7 @@ import {
 } from "react-icons/fa";
 
 import { SiSpringboot, SiTailwindcss } from "react-icons/si";
+import { FirebaseIcon } from "../icons/FirebaseIcon";
 
 export default function TechCarousel() {
   const technologies = [
@@ -32,7 +33,8 @@ export default function TechCarousel() {
     { name: "Docker", icon: FaDocker, color: "text-blue-400" },
     { name: "Git", icon: FaGitAlt, color: "text-orange-500" },
     { name: "Linux", icon: FaLinux, color: "text-black dark:text-white" },
-    { name: "Bases de datos", icon: Database, color: "text-purple-400" },
+    { name: "Bases de datos", icon: Database, color: "text-purple-400", size: "w-10 h-10" },
+    { name: "Firebase", icon: FirebaseIcon, color: "text-yellow-500", size: "w-10 h-10" },
   ];
 
   const trackRef = useRef<HTMLDivElement>(null);
@@ -110,7 +112,7 @@ export default function TechCarousel() {
           >
             <div className="bg-dark-card border border-white/10 rounded-2xl p-6 h-44 flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20">
               <div className="w-20 h-20 rounded-xl bg-white/5 flex items-center justify-center">
-                <tech.icon className={`text-5xl ${tech.color}`} />
+                <tech.icon className={`text-5xl ${tech.color} ${tech.size}`} />
               </div>
               <span className="text-white font-semibold text-sm text-center">
                 {tech.name}

@@ -5,6 +5,7 @@ import { JavaScriptIcon } from '../icons/JavaScriptIcon';
 import { TailwindCSSIcon } from '../icons/TailwindIcon';
 import { FirebaseIcon } from '../icons/FirebaseIcon';
 import { AstroIcon } from '../icons/AstroIcon';
+import { AngularIcon } from '../icons/AngularIcon';
 
 
 export default function Portfolio() {
@@ -39,6 +40,11 @@ export default function Portfolio() {
       name: "Astro",
       class: "bg-[#E14D85]/10 text-[#E14D85]",
       icon: <AstroIcon/>
+    },
+    AngularIcon: {
+      name: "Angular",
+      class: "bg-[#F40F57]/10 text-[#F40F57]",
+      icon: <AngularIcon/>
     }
   }
   const projects = [
@@ -57,6 +63,14 @@ export default function Portfolio() {
       image: "/projects/festival-gastronomico.webp",
       tags: [tags.AstroIcon, tags.FirebaseIcon, tags.TailwindCSSIcon],
       link: "https://festival-gastronomico-patios.web.app/",
+    },
+    {
+      title: "Jobbing",
+      category: "Página Web",
+      description: "Comunicación · Inclusión · Marketing.",
+      image: "/projects/Jobbing.webp",
+      tags: [tags.AngularIcon, tags.TailwindCSSIcon],
+      link: "https://jobbing-app.vercel.app/",
     },
     
   ];
