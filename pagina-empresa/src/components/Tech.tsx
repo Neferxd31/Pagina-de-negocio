@@ -40,7 +40,6 @@ export default function TechCarousel() {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
-  // 🔁 Auto scroll suave (sin reinicio)
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -62,7 +61,6 @@ export default function TechCarousel() {
     return () => cancelAnimationFrame(animationId);
   }, [isDragging]);
 
-  // 🖐️ Drag / Swipe
   const onPointerDown = (e: React.PointerEvent) => {
     setIsDragging(true);
     startX.current = e.clientX;
@@ -80,8 +78,10 @@ export default function TechCarousel() {
   const duplicatedTechs = [...technologies, ...technologies];
 
   return (
-    <section className="py-20 bg-dark relative overflow-hidden">
-      {/* Header */}
+    <section
+      id="tech"
+      className="py-20 bg-dark relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
           Tecnologías que{" "}
@@ -94,7 +94,6 @@ export default function TechCarousel() {
         </p>
       </div>
 
-      {/* Carrusel */}
       <div
         ref={trackRef}
         onPointerDown={onPointerDown}

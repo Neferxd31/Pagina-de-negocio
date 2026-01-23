@@ -5,6 +5,7 @@ import Process from "../components/Process";
 import Team from "../components/Team";
 import Portfolio from "../components/Portfolio";
 import Tech from "../components/Tech";
+import Burble from "../components/Burble";
 
 export default function Inicio(){
     return(
@@ -16,6 +17,7 @@ export default function Inicio(){
           <Portfolio/>
           <Team/>
           <Cta/>
+          <Burble/>
         </div>
     );
 }
