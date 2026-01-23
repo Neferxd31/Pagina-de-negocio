@@ -20,7 +20,7 @@ export default function Process() {
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 relative">
           {/* Línea conectora para desktop */}
-          <div className="hidden md:block absolute top-[3.5rem] left-0 w-full h-[2px] bg-white/10 z-0"></div>
+          <div className="hidden md:block absolute top-14 left-0 w-full h-0.5 bg-white/10 z-0"></div>
 
           {steps.map((step, index) => (
             <div key={index} className="relative z-10 text-center group animate-fade-in-up" style={{animationDelay: `${index * 150}ms`}}>

@@ -5,14 +5,14 @@ export default function PoliticaPrivacidad() {
     <div className="bg-dark min-h-screen">
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6 bg-dark relative overflow-hidden">
-        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-secondary/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-[-20%] right-[-10%] w-150 h-150 bg-secondary/20 blur-[120px] rounded-full pointer-events-none"></div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-primary text-sm font-semibold mb-6 backdrop-blur-md">
             <Lock size={16} /> Privacidad y Seguridad
           </div>
           <h1 className="text-4xl lg:text-6xl font-extrabold mb-6">
-            Política de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Privacidad</span>
+            Política de <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">Privacidad</span>
           </h1>
           <p className="text-muted text-lg mb-4">
             Última actualización: Enero 2026
@@ -27,7 +27,7 @@ export default function PoliticaPrivacidad() {
           {/* Introducción */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <Shield className="text-primary" size={24} />
               </div>
               <div>
@@ -43,7 +43,7 @@ export default function PoliticaPrivacidad() {
           {/* Sección 1 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <Database className="text-primary" size={24} />
               </div>
               <div>
@@ -81,7 +81,7 @@ export default function PoliticaPrivacidad() {
           {/* Sección 2 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <Eye className="text-primary" size={24} />
               </div>
               <div>
@@ -118,7 +118,7 @@ export default function PoliticaPrivacidad() {
           {/* Sección 3 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <Lock className="text-primary" size={24} />
               </div>
               <div>
@@ -151,7 +151,7 @@ export default function PoliticaPrivacidad() {
           {/* Sección 4 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8 mb-6">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <FileText className="text-primary" size={24} />
               </div>
               <div>
@@ -236,7 +236,7 @@ export default function PoliticaPrivacidad() {
           {/* Sección 7 */}
           <div className="bg-dark-card border border-white/10 rounded-2xl p-8">
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
                 <Mail className="text-primary" size={24} />
               </div>
               <div>
