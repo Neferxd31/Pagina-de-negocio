@@ -1,117 +1,106 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Code2 } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
-  const isHomePage = location.pathname === "/";
+  // Cambia el fondo del navbar al hacer scroll
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  // Cierra el menú móvil al cambiar de ruta
+  useEffect(() => setIsOpen(false), [location]);
 
   const navLinks = [
-    { id: "proceso", label: "Proceso" },
-    { id: "servicios", label: "Servicios" }, 
-    { id: "tech", label: "Tecnologías" },
-    { id: "portfolio", label: "Portfolio" },
-    { id: "equipo", label: "Equipo" },
+    { name: "Inicio", page: "/" },
+    { name: "Sobre Nosotros", page: "/sobrenosotros" },
+    /*{ name: "Aprende", page: "/aprende" },
+    { name: "Planes", page: "/planes" },*/
   ];
 
-  const scrollToSection = (id: string) => {
-    setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        const yOffset = -80; // altura del navbar
-        const y =
-          element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    }, 100);
-  };
-
-  const handleNavClick = (id: string) => {
-    if (!isHomePage) {
-      navigate("/");
-      scrollToSection(id);
-    } else {
-      scrollToSection(id);
-    }
-    setIsOpen(false);
-  };
-
   return (
-    <nav className="fixed w-full z-50 bg-dark/90 backdrop-blur-xl border-b border-white/5 supports-backdrop-filter:bg-dark/60">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? "bg-dark/80 backdrop-blur-md border-b border-white/10 py-3" 
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 text-xl font-bold text-white hover:text-primary transition-colors group"
+          className="flex items-center gap-2 text-2xl font-bold text-white group"
         >
-          <Code2 className="w-8 h-8 group-hover:rotate-12 transition-transform" />
-          <span>KorexalTech</span>
+          <div className="bg-primary/20 p-2 rounded-lg group-hover:bg-primary/30 transition-colors">
+            <Code2 className="w-7 h-7 text-primary group-hover:rotate-12 transition-transform" />
+          </div>
+          <span className="tracking-tight">KorexalTech</span>
         </Link>
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8 font-medium">
-          <div className="flex gap-8 text-muted">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-10">
+          <div className="flex gap-8">
             {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNavClick(link.id)}
-                className="hover:text-primary transition-colors relative after:absolute after:bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              <Link
+                key={link.page}
+                to={link.page}
+                className={`text-sm font-medium transition-all hover:text-primary relative group ${
+                  location.pathname === link.page ? "text-primary" : "text-gray-300"
+                }`}
               >
-                {link.label}
-              </button>
+                {link.name}
+                {/* Indicador de página activa */}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${
+                  location.pathname === link.page ? "w-full" : ""
+                }`} />
+              </Link>
             ))}
           </div>
 
-          <button
-            onClick={() => handleNavClick("contacto")}
-            className="bg-primary px-6 py-2.5 rounded-lg hover:bg-secondary transition-all text-white font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 active:translate-y-0"
-          >
+          <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
             Cotizar Proyecto
           </button>
         </div>
 
-        {/* Botón móvil */}
+        {/* Mobile Toggle */}
         <button
-          onClick={toggleMenu}
-          className="md:hidden text-muted hover:text-white p-2"
-          aria-label="Toggle Menu"
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-white p-2 focus:outline-none"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Menú móvil */}
+      {/* Menú Móvil */}
       <div
-        className={`md:hidden absolute w-full bg-dark-card border-b border-white/10 transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden absolute w-full bg-dark-card/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-screen py-6 opacity-100" : "max-h-0 py-0 opacity-0 overflow-hidden"
         }`}
       >
-        <div className="px-6 pt-4 pb-8 space-y-2 flex flex-col">
+        <div className="flex flex-col px-6 gap-4">
           {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleNavClick(link.id)}
-              className="text-left text-muted hover:text-primary hover:bg-white/5 px-4 py-3 rounded-lg text-lg font-medium transition-colors"
+            <Link
+              key={link.page}
+              to={link.page}
+              className={`text-lg font-medium py-2 ${
+                location.pathname === link.page ? "text-primary" : "text-gray-300"
+              }`}
             >
-              {link.label}
-            </button>
+              {link.name}
+            </Link>
           ))}
-
-          <div className="pt-4">
-            <button
-              onClick={() => handleNavClick("contacto")}
-              className="w-full flex justify-center bg-primary px-6 py-3 rounded-lg hover:bg-secondary transition-colors text-white font-semibold shadow-md"
-            >
-              Cotizar Proyecto
-            </button>
-          </div>
+          <hr className="border-white/5 my-2" />
+          <button className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:cursor-pointer">
+            Cotizar Proyecto
+          </button>
         </div>
       </div>
     </nav>

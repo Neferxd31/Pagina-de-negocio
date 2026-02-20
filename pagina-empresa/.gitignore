@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+src/pages/Planes.tsx
+src/pages/Aprende.tsx
