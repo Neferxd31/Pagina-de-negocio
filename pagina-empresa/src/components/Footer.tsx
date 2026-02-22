@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="py-16 bg-dark-card border-t border-white/5 px-6">
+    <footer className="py-16 bg-dark-card border-t border-white/5 px-6 w-full">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
 
         <div className="col-span-1 md:col-span-2">
@@ -15,7 +15,7 @@ export default function Footer() {
             <span>KorexalTech</span>
           </Link>
 
-          <p className="text-muted max-w-sm mb-6 leading-relaxed">
+          <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
             Transformamos negocios a través de software de alta calidad,
             innovación constante y alianzas estratégicas a largo plazo.
           </p>
@@ -23,21 +23,21 @@ export default function Footer() {
           <div className="flex gap-4">
             <a
               href="#"
-              className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-muted hover:text-white hover:bg-primary transition-all"
+              className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-muted-foreground hover:text-white hover:bg-primary transition-all"
             >
               <Twitter size={20} />
             </a>
 
             <a
               href="#"
-              className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-muted hover:text-white hover:bg-primary transition-all"
+              className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-muted-foreground hover:text-white hover:bg-primary transition-all"
             >
               <Linkedin size={20} />
             </a>
 
             <a
               href="#"
-              className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-muted hover:text-white hover:bg-primary transition-all"
+              className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-muted-foreground hover:text-white hover:bg-primary transition-all"
             >
               <Github size={20} />
             </a>
@@ -46,18 +46,18 @@ export default function Footer() {
 
         <div>
           <h4 className="font-bold text-white mb-6 text-lg">Enlaces Rápidos</h4>
-          <ul className="space-y-3 text-muted">
-            <li><a href="/#servicios" className="hover:text-primary transition-colors">Servicios</a></li>
-            <li><a href="/#proceso" className="hover:text-primary transition-colors">Proceso</a></li>
-            <li><a href="/#equipo" className="hover:text-primary transition-colors">Equipo</a></li>
-            <li><a href="/#portfolio" className="hover:text-primary transition-colors">Portfolio</a></li>
-            <li><a href="/#contacto" className="hover:text-primary transition-colors">Contacto</a></li>
+          <ul className="space-y-3 text-muted-foreground">
+            <li><Link to="/#servicios" className="hover:text-primary transition-colors">Servicios</Link></li>
+            <li><Link to="/#proceso" className="hover:text-primary transition-colors">Proceso</Link></li>
+            <li><Link to="/sobrenosotros" className="hover:text-primary transition-colors">Equipo</Link></li>
+            <li><Link to="/planes" className="hover:text-primary transition-colors">Planes</Link></li>
+            <li><Link to="/#contacto" className="hover:text-primary transition-colors">Contacto</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-bold text-white mb-6 text-lg">Legal</h4>
-          <ul className="space-y-3 text-muted">
+          <ul className="space-y-3 text-muted-foreground">
             <li>
               <Link to="/terminos-servicio" className="hover:text-primary transition-colors">
                 Términos de Servicio
@@ -73,9 +73,9 @@ export default function Footer() {
 
       </div>
 
-      <div className="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-muted text-sm">
+      <div className="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
         <p>© 2026 KorexalTech. Todos los derechos reservados.</p>
-        <p className="mt-4 md:mt-0">Diseñado con precisión y pasión.</p>
+        <p className="mt-4 md:mt-0 opacity-70">Diseñado con precisión y pasión.</p>
       </div>
     </footer>
   );
