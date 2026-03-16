@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Code2 } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
-  // Cambia el fondo del navbar al hacer scroll
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const isHomePage = location.pathname === "/";
 
   const navLinks = [
     { id: "proceso", label: "Proceso" },
@@ -167,8 +163,8 @@ export default function Navbar() {
                 transform: isOpen ? "translateX(0)" : "translateX(-20px)",
               }}
             >
-              {link.name}
-            </Link>
+              {link.label}
+            </button>
           ))}
 
           <Link
