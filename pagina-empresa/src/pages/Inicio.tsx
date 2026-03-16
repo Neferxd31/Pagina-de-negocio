@@ -7,17 +7,20 @@ import Portfolio from "../components/Portfolio";
 import Tech from "../components/Tech";
 import Burble from "../components/Burble";
 
-export default function Inicio(){
-    return(
-        <div>
-          <Hero/>
-          <Process/>
-          <Services/>
-          <Tech/>
-          <Portfolio/>
-          <Team/>
-          <Cta/>
-          <Burble/>
-        </div>
-    );
+
+export default function Inicio() {
+  return (
+    <div>
+      <Hero />
+      <Process />
+      <Services />
+      {/* <Metrics /> */}
+      <Tech />
+      <Portfolio />
+      <Team />
+      {/* <Companies /> */}
+      <Cta />
+      <Burble />
+    </div>
+  );
 }

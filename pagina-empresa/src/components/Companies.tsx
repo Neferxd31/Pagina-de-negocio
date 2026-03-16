@@ -1,16 +1,26 @@
+import { useInView } from '../hooks/useInView';
+
 export default function Companies() {
+  const { ref, isVisible } = useInView(0.2);
   const companies = ["TechGlobal", "InnovaCorp", "AlphaSystems", "DataFuture", "CloudNet"];
+
   return (
-    <section className="py-20 bg-dark-lighter/50 border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6 text-center animate-fade-in">
-        <p className="text-muted uppercase tracking-widest font-bold mb-10 text-sm">Confían en nuestra ingeniería</p>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 items-center justify-items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
-          {/* En un caso real, aquí irían <img src="/logo.svg" /> */}
-          {companies.map((company) => (
-            <div key={company} className="text-2xl font-bold text-white/30 hover:text-white/80 transition-colors cursor-default select-none flex items-center gap-2">
-                {/* Placeholder de logo */}
-                <div className="w-8 h-8 rounded-md bg-white/10"></div>
-                {company}
+    <section className="py-20 bg-dark border-b border-white/5 overflow-hidden" ref={ref}>
+      <div className={`text-center mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <p className="text-muted uppercase tracking-widest font-bold text-sm">Confían en nuestra ingeniería</p>
+      </div>
+
+      <div className="relative">
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-dark to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-dark to-transparent z-10 pointer-events-none"></div>
+
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...companies, ...companies, ...companies, ...companies].map((company, i) => (
+            <div key={i} className="mx-8 lg:mx-12 flex items-center gap-3 text-2xl font-bold text-white/20 hover:text-white/60 transition-colors duration-500 cursor-default select-none shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                <span className="text-sm font-black text-white/30">{company[0]}</span>
+              </div>
+              {company}
             </div>
           ))}
         </div>

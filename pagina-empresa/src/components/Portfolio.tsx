@@ -6,47 +6,21 @@ import { TailwindCSSIcon } from '../icons/TailwindIcon';
 import { FirebaseIcon } from '../icons/FirebaseIcon';
 import { AstroIcon } from '../icons/AstroIcon';
 import { AngularIcon } from '../icons/AngularIcon';
-
+import { useInView } from '../hooks/useInView';
 
 export default function Portfolio() {
-  const tags = {
-    Html5:{
-      name: "HTML5",
-      class: "bg-[#E34F26]/10 text-[#E34F26]",
-      icon: <HTML5Icon/>
-    },
-    Css:{
-      name: "CSS",
-      class: "bg-[#1572B6]/10 text-[#1572B6]",
-      icon: <CSSIcon/>
-    },
-    JavaScript:{
-      name: "JavaScript",
-      class: "bg-[#F7DF1E]/10 text-[#F7DF1E]",
-      icon: <JavaScriptIcon/>
+  const { ref, isVisible } = useInView(0.1);
 
-    },
-    TailwindCSSIcon: {
-      name: "TailwindCSS",
-      class: "bg-[#06B6D4]/10 text-[#06B6D4]",
-      icon: <TailwindCSSIcon/>
-    },
-    FirebaseIcon: {
-      name: "Firebase",
-      class: "bg-[#FF9100]/10 text-[#FF9100]",
-      icon: <FirebaseIcon/>
-    },
-    AstroIcon: {
-      name: "Astro",
-      class: "bg-[#E14D85]/10 text-[#E14D85]",
-      icon: <AstroIcon/>
-    },
-    AngularIcon: {
-      name: "Angular",
-      class: "bg-[#F40F57]/10 text-[#F40F57]",
-      icon: <AngularIcon/>
-    }
-  }
+  const tags = {
+    Html5: { name: "HTML5", class: "bg-[#E34F26]/10 text-[#E34F26]", icon: <HTML5Icon/> },
+    Css: { name: "CSS", class: "bg-[#1572B6]/10 text-[#1572B6]", icon: <CSSIcon/> },
+    JavaScript: { name: "JavaScript", class: "bg-[#F7DF1E]/10 text-[#F7DF1E]", icon: <JavaScriptIcon/> },
+    TailwindCSSIcon: { name: "TailwindCSS", class: "bg-[#06B6D4]/10 text-[#06B6D4]", icon: <TailwindCSSIcon/> },
+    FirebaseIcon: { name: "Firebase", class: "bg-[#FF9100]/10 text-[#FF9100]", icon: <FirebaseIcon/> },
+    AstroIcon: { name: "Astro", class: "bg-[#E14D85]/10 text-[#E14D85]", icon: <AstroIcon/> },
+    AngularIcon: { name: "Angular", class: "bg-[#F40F57]/10 text-[#F40F57]", icon: <AngularIcon/> }
+  };
+
   const projects = [
     {
       title: "Tymon",
@@ -72,18 +46,18 @@ export default function Portfolio() {
       tags: [tags.AngularIcon, tags.TailwindCSSIcon],
       link: "https://jobbing-app.vercel.app/",
     },
-    
   ];
 
   return (
     <section id="portfolio" className="py-32 bg-dark px-6 relative overflow-hidden">
-      {/* Efectos de Fondo */}
-      <div className="absolute top-[10%] right-[-5%] w-150 h-150 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-[20%] left-[-5%] w-100 h-100 bg-secondary/10 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-[10%] right-[-5%] w-[400px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-[20%] left-[-5%] w-[300px] h-[300px] bg-secondary/10 blur-[100px] rounded-full pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20 animate-fade-in-up">
+      <div className="max-w-7xl mx-auto relative z-10" ref={ref}>
+        <div className={`text-center mb-20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full text-primary text-sm font-semibold mb-6">
+            Proyectos Destacados
+          </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Nuestro <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">Portfolio</span>
           </h2>
@@ -92,91 +66,80 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Grid de Proyectos */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="group bg-dark-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 animate-fade-in-up"
-              style={{animationDelay: `${index * 100}ms`}}
+            <div
+              key={index}
+              className={`group bg-dark-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-700 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              style={{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }}
             >
-              {/* Imagen del Proyecto */}
-              <div className="relative h-56 overflow-hidden bg-dark-lighter">
-                <img 
-                  src={project.image} 
+              <div className="relative h-56 overflow-hidden bg-dark">
+                <img
+                  src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover  duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-dark-card via-dark-card/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                
-                {/* Categoría Badge */}
+
                 <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">
                   {project.category}
                 </div>
 
-                {/* Enlaces flotantes */}
-                <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a 
-                    href={project.link} 
+                <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a
+                    href={project.link}
                     className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                     aria-label="Ver proyecto"
-                    target='_blank' rel="noreferrer"
+                    target="_blank" rel="noreferrer"
                   >
                     <ExternalLink size={18} />
                   </a>
-                  
                 </div>
               </div>
 
-              {/* Contenido */}
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
                 <p className="text-muted mb-4 leading-relaxed text-sm">
                   {project.description}
                 </p>
 
-                {/* Tags de Tecnologías */}
                 <div className="flex flex-wrap gap-2 mb-4 font-semibold">
-                  {project.tags.map((tag, i) => {
-                  const isObject = typeof tag === 'object' && tag !== null;
-    
-                  const label = isObject ? tag.name : tag;
-                  const icon = isObject ? tag.icon : null;
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className={`px-3 py-1 rounded-full text-xs transition-colors flex items-center gap-2 ${tag.class}`}
+                    >
+                      {tag.icon && <span className="w-3 h-3 flex items-center">{tag.icon}</span>}
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
 
-                    return (
-                      <span 
-                        key={i}
-                        className={`px-3 py-1 rounded-full text-xs transition-colors flex items-center gap-2 ${tag.class}`}
-                      >
-                      {icon && <span className="w-3 h-3 flex items-center">{icon}</span>}
-                      {label}
-                      </span>
-                    );  
-                  })}
-                </div>  
-                {/* Ver más */}
-                <a 
+                <a
                   href={project.link}
-                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all group"
+                  target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all group/link"
                 >
-                  Ver proyecto completo 
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  Ver proyecto completo
+                  <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA Final */}
-        <div className="text-center mt-16 animate-fade-in-up">
-          <a 
-            href="#contacto" 
-            className="inline-flex items-center gap-3 bg-primary hover:bg-secondary px-8 py-4 rounded-xl text-white font-bold transition-all shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1 group"
+        <div className={`text-center mt-16 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <a
+            href="#contacto"
+            className="relative inline-flex items-center gap-3 bg-primary px-8 py-4 rounded-xl text-white font-bold transition-all shadow-xl shadow-primary/25 hover:shadow-primary/50 hover:-translate-y-1 group overflow-hidden"
           >
-            ¿Listo para tu proyecto? 
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <span className="relative z-10 flex items-center gap-3">
+              ¿Listo para tu proyecto?
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </span>
+            <div className="absolute inset-0 bg-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
           </a>
         </div>
       </div>
