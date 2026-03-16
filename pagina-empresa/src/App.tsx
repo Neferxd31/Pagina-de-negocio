@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Inicio from "./pages/Inicio";
+import SobreNosotros from "./pages/SobreNosotros";
 import TerminosServicio from "./pages/TerminosServicio";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import Navbar from "./components/Navbar";
@@ -13,6 +14,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Inicio/>} />
+          <Route path="/sobre-nosotros" element={<SobreNosotros/>} />
           <Route path="/terminos-servicio" element={<TerminosServicio/>} />
           <Route path="/politica-privacidad" element={<PoliticaPrivacidad/>} />
         </Routes>
