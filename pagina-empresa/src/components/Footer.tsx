@@ -25,7 +25,7 @@ export default function Footer() {
             </span>
           </Link>
 
-          <p className="text-muted max-w-sm mb-6 leading-relaxed">
+          <p className="text-muted-foreground max-w-sm mb-6 leading-relaxed">
             Transformamos negocios a través de software de alta calidad,
             innovación constante y alianzas estratégicas a largo plazo.
           </p>
@@ -81,7 +81,7 @@ export default function Footer() {
 
         <div>
           <h4 className="font-bold text-white mb-6 text-lg">Legal</h4>
-          <ul className="space-y-3 text-muted">
+          <ul className="space-y-3 text-muted-foreground">
             <li>
               <Link
                 to="/terminos-servicio"
