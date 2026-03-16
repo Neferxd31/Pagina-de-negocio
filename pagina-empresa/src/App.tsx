@@ -5,6 +5,9 @@ import SobreNosotros from "./pages/SobreNosotros";
 import TerminosServicio from "./pages/TerminosServicio";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import Navbar from "./components/Navbar";
+import SobreNosotros from "./pages/SobreNosotros";
+/*import Aprende from "./pages/Aprende";
+import Planes from "./pages/Planes";*/
 
 function App() {
   return (
